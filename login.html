@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="res\liga logo fondo rojo.png" type="image/x-icon" />
+    <title>Web La Liga · Login</title>
+</head>
+
+<body class="bodyLogin">
+
+<!-- navbars -->
+<section>
+  <div class="NavBarDesktop">
+    <div class="LogoDesktop">
+      <img src="res\liga logo fondo rojo.png" alt="logo" />
+    </div>
+    <div class="NavElements">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+        <li><a href="https://www.marca.com/futbol/primera-division/clasificacion.html">Tabla de Clasificacion</a></li>
+        <li><a href="login.html">Login</a></li>
+    </div>
+    <div class="user">
+      <img src="./res/user-128-64.png" alt="user" />
+      <div class="submenu hidden">
+        <a href="#">Ajustes</a>
+        <a href="login.html">Login</a>
+        <a href=".">salir</a>
+      </div>
+    </div>
+  </div>
+  <!-- navbar mobile -->
+  <div class="NavBarMobile">
+    <div class="LogoMobile" onclick="changeStatusMobile()">
+      <img src="res\liga logo fondo rojo.png" alt="logo" />
+    </div>
+    <div class="NavElementsMobile hidden">
+      <li><a href="index.html">Inicio</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+        <li><a href="https://www.marca.com/futbol/primera-division/clasificacion.html">Tabla de Clasificacion</a></li>
+        <li><a href="login.html">Login</a></li>
+    </div>
+    <div class="userMobile hidden">
+      <img src="./res/user-128-64.png" alt="user" />
+    </div>
+  </div>
+
+</section>
+<!-- fin navbars -->
+
+
+    <div class="mainLogin">
+        <form class="register-form animating">
+            <h2>Registro</h2>
+            <label for="register-username">Nombre de usuario:</label>
+            <input type="text" class="register-username" required>
+            <label for="register-password">Contraseña:</label>
+            <input type="password" class="register-password" required>
+            <div class=" buttonLoginAccept">Registate</div>
+            <div class=" buttonLoginAccept botonActivacionCubo">Ya tienes cuenta ?<br> inicia sesion</div>
+            
+        </form>
+
+        <form class="login-form">
+            <h2>Iniciar Sesión</h2>
+            <label for="login-username">Nombre de usuario:</label>
+            <input type="text" class="login-username" required>
+            <label for="login-password">Contraseña:</label>
+            <input type="password" class="login-password" required>
+            <div class=" buttonLoginAccept">Login</div>
+            <div class=" buttonLoginAccept botonActivacionCubo">No te has registrado ?<br> registate</div>
+        </form>
+    </div>
+    <section>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <p>© 2024 Workspace. Todos los derechos reservados.</p>
+            <ul class="footer-menu">
+              <li><a href="#">Inicio</a></li>
+              <li><a href="contactUs.html">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </section>
+</body>
+
+</html>
+</body>
+
+</html>
