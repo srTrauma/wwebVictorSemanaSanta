@@ -1,8 +1,39 @@
+$font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$transition-duration: 0.3s;
+$scroll-behavior: smooth !important;
+$background-color: #f5f5f5;
+$text-color: black;
+$box-shadow: 0 0 15px gray;
+$primary-color: #ff3232;
+$secondary-color: #f5f5f5;
+$blur-filter: blur(15px);
+$border-radius: 15px;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin transition($property) {
+  transition: $property $transition-duration;
+}
+
+@mixin box-shadow($value) {
+  box-shadow: $value;
+}
+
+@mixin background-image($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 * {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  transition: all 0.3s;
-  scroll-behavior: smooth !important;
+  font-family: $font-family;
+  @include transition(all);
+  scroll-behavior: $scroll-behavior;
 }
 
 body {
@@ -10,8 +41,8 @@ body {
   flex-direction: column;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
-  color: black;
+  background-color: $background-color;
+  color: $text-color;
   animation: bodyInitAnim 0.2s ease-in forwards;
 }
 
@@ -26,50 +57,43 @@ body {
 }
 
 .NavBarDesktop {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffff;
-  color: #333;
+  @include flex-center;
+  background-color: $secondary-color;
+  color: $text-color;
   padding: 3rem 4rem;
-  box-shadow: 0 0 15px gray;
+  @include box-shadow($box-shadow);
   z-index: 999;
 }
 
 .submenu {
   position: absolute;
-  background-color: #f5f5f5;
-  box-shadow: 0 0 15px gray;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: $secondary-color;
+  @include box-shadow($box-shadow);
+  @include flex-center;
 }
 
 .submenu a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   flex-direction: column;
   text-align: center;
   z-index: 100000000000000;
   text-decoration: none;
-  color: #333;
+  color: $text-color;
   font-size: 1.25rem;
   width: 100%;
   padding: 0.6rem;
 }
 
 .submenu a:hover {
-  background-color: #ff3232;
-  color: #f5f5f5;
+  background-color: $primary-color;
+  color: $secondary-color;
   cursor: pointer;
 }
 
 .LogoDesktop img {
   height: 5rem;
-  border-radius: 15px;
-  box-shadow: 5px 5px 5px 5px #fd8484;
+  border-radius: $border-radius;
+  @include box-shadow(5px 5px 5px 5px #fd8484);
 }
 
 .NavElements {
@@ -79,11 +103,13 @@ body {
   list-style: none;
   text-decoration: none;
 }
+
 .NavElements a {
   text-decoration: none;
   font-size: 1.25rem;
-  color: #333;
+  color: $text-color;
 }
+
 .NavBarDesktop.fixed-navbar {
   position: fixed;
   top: 0;
@@ -104,19 +130,19 @@ body {
 
 .NavElements li {
   text-decoration: none;
-  color: #333;
+  color: $text-color;
   font-size: 1.25rem;
 }
 
 .NavElements li:hover {
-  color: #ff3232;
+  color: $primary-color;
   cursor: pointer;
-  border-bottom: #ff3232 1px solid;
+  border-bottom: $primary-color 1px solid;
   padding-top: 0.2rem;
 }
 
 .user {
-  box-shadow: -5px 5px 15px 5px #fd8484;
+  @include box-shadow(-5px 5px 15px 5px #fd8484);
   border-radius: 9999999999999px;
   padding: 0 0.2rem;
   cursor: pointer;
@@ -191,11 +217,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("res/descarga.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  filter: blur(15px);
+  @include background-image("res/descarga.jpeg");
+  @include blur-filter;
   z-index: -1;
 }
 
@@ -219,7 +242,6 @@ body {
 
 .textoMobile {
   display: none;
-
 }
 
 @media (max-width: 768px) {
@@ -239,10 +261,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: $secondary-color;
+    color: $text-color;
     padding: 3rem 4rem;
-    box-shadow: 0 0 15px gray;
+    @include box-shadow($box-shadow);
     position: sticky;
     top: auto;
     z-index: 999;
@@ -251,12 +273,12 @@ body {
 
   .LogoMobile img {
     width: 4rem;
-    border-radius: 15px;
-    box-shadow: 5px 5px 5px 5px #fd8484;
+    border-radius: $border-radius;
+    @include box-shadow(5px 5px 5px 5px #fd8484);
   }
 
   .userMobile {
-    box-shadow: 0px 5px 15px 5px #fd8484;
+    @include box-shadow(0px 5px 15px 5px #fd8484);
     border-radius: 9999999999999px !important;
   }
 
@@ -309,7 +331,7 @@ form div textarea {
 form div input[type="submit"] {
   padding: 1rem;
   border-radius: 2.5rem;
-  background-color: #f00;
+  background-color: $primary-color;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -341,13 +363,11 @@ form div input[type="submit"] {
 .imagenContact::before {
   position: absolute;
   content: "Contenido de renderizado contacto";
-  background-image: url("./res/campo_cantacto.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  @include background-image("./res/campo_cantacto.jpeg");
+  @include blur-filter;
   color: #ffffff;
   width: 100%;
   height: 100%;
-  filter: blur(15px);
   z-index: -1;
 }
 
@@ -356,7 +376,6 @@ form div input[type="submit"] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .mainContacto form div {
@@ -372,14 +391,14 @@ form div input[type="submit"] {
 .mainContacto form div input {
   outline: #333;
   border: #333 solid 1px !important;
-  border-radius: 15px;
+  border-radius: $border-radius;
 }
 
 .mainContacto form div input:focus {
-  transition: all 0.3s;
+  @include transition(all);
   outline: none;
   padding: 0.5rem 1rem;
-  box-shadow: 0 0 10px #fd8484;
+  @include box-shadow(0 0 10px #fd8484);
 }
 
 .register-form {
@@ -420,31 +439,31 @@ form div input[type="submit"] {
 .mainLogin form input {
   outline: none;
   border: solid 1px #333;
-  border-radius: 15px;
+  border-radius: $border-radius;
   padding: 0.4rem 0.9rem;
 }
 
 .mainLogin form input:focus {
-  transition: all 0.3s;
+  @include transition(all);
   outline: none;
   padding: 0.5rem 1rem;
-  box-shadow: 0 0 10px #fd8484;
+  @include box-shadow(0 0 10px #fd8484);
 }
 
 .buttonLoginAccept {
   padding: 0.5rem 1rem;
-  border-radius: 15px;
-  background-color: #f00;
+  border-radius: $border-radius;
+  background-color: $primary-color;
   color: #fff;
   border: none;
   cursor: pointer;
   text-align: center;
-  box-shadow: 0 0 10px #000000;
+  @include box-shadow(0 0 10px #000000);
 }
 
 .buttonLoginAccept:hover {
-  background-color: #ff3232;
-  color: #f5f5f5;
+  background-color: $primary-color;
+  color: $secondary-color;
 }
 
 form.animating {
@@ -465,6 +484,7 @@ form.animating {
     translate: translateY(0%);
   }
 }
+
 .teamList {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -482,85 +502,88 @@ form.animating {
   justify-content: center;
   margin: 1rem;
   padding: 10rem 3rem;
-  border-radius: 15px;
-  box-shadow: 0 0 10px #fd8484;
-  background-color: #f5f5f5;
-  color: #333;
-
+  border-radius: $border-radius;
+  @include box-shadow(0 0 10px #fd8484);
+  background-color: $secondary-color;
+  color: $text-color;
 }
 
 @media (max-width: 1100px) {
   .team {
-    width: 100%;
+    width: 65%;
+    margin-left: 6%;
   }
   .teamList {
     grid-template-columns: repeat(1, 1fr);
-    margin-left: 25%;
-    
+    margin-top: 15%!important;
+    margin: 0;
   }
 }
-a{
+
+a {
   text-decoration: none;
-  color: #333;
+  color: $text-color;
 }
+
 .footer {
-    background-color: #000;
-    color: #fff;
-    padding: 20px 0;
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  margin-top: 14.6%;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer-content p {
-    margin: 0;
+  margin: 0;
 }
 
 .footer-menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
 
 .footer-menu li {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .footer-menu li:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .footer-menu a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Estilos para dispositivos móviles */
 @media screen and (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .footer-menu {
-        margin-top: 15px;
-    }
+  .footer-menu {
+    margin-top: 15px;
+  }
 
-    .footer-menu li {
-        margin: 0 10px;
-    }
-    .footer{
-      margin-top: 100%;
-    }
+  .footer-menu li {
+    margin: 0 10px;
+  }
+  .footer {
+    margin-top: 100%;
+  }
 }
