@@ -57,7 +57,10 @@ body {
 }
 
 .NavBarDesktop {
-  @include flex-center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: $secondary-color;
   color: $text-color;
   padding: 3rem 4rem;
@@ -218,7 +221,7 @@ body {
   width: 100%;
   height: 100%;
   @include background-image("res/descarga.jpeg");
-  @include blur-filter;
+  filter: $blur-filter;
   z-index: -1;
 }
 
@@ -244,7 +247,7 @@ body {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .textoMobile {
     display: flex;
     flex-direction: column;
@@ -364,7 +367,7 @@ form div input[type="submit"] {
   position: absolute;
   content: "Contenido de renderizado contacto";
   @include background-image("./res/campo_cantacto.jpeg");
-  @include blur-filter;
+  filter: $blur-filter;
   color: #ffffff;
   width: 100%;
   height: 100%;
@@ -509,17 +512,35 @@ form.animating {
 }
 
 @media (max-width: 1100px) {
-  .team {
-    width: 65%;
-    margin-left: 6%;
-  }
   .teamList {
-    grid-template-columns: repeat(1, 1fr);
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .team{
+    width: 75%;
     margin-top: 15%!important;
+  }
+}
+@media (max-width: 768px) {
+  .teamList {
+    margin: top 15% !important;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .team{
+    width: 45%;
     margin: 0;
   }
 }
-
 a {
   text-decoration: none;
   color: $text-color;

@@ -25,10 +25,11 @@ body {
 }
 .NavBarDesktop {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
-  color: #333;
+  background-color: #f5f5f5;
+  color: black;
   padding: 3rem 4rem;
   box-shadow: 0 0 15px gray;
   z-index: 999;
@@ -39,7 +40,6 @@ body {
   background-color: #f5f5f5;
   box-shadow: 0 0 15px gray;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -52,7 +52,7 @@ body {
   text-align: center;
   z-index: 100000000000000;
   text-decoration: none;
-  color: #333;
+  color: black;
   font-size: 1.25rem;
   width: 100%;
   padding: 0.6rem;
@@ -81,7 +81,7 @@ body {
 .NavElements a {
   text-decoration: none;
   font-size: 1.25rem;
-  color: #333;
+  color: black;
 }
 
 .NavBarDesktop.fixed-navbar {
@@ -102,7 +102,7 @@ body {
 }
 .NavElements li {
   text-decoration: none;
-  color: #333;
+  color: black;
   font-size: 1.25rem;
 }
 
@@ -215,7 +215,7 @@ body {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .textoMobile {
     display: flex;
     flex-direction: column;
@@ -231,7 +231,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #f5f5f5;
-    color: #333;
+    color: black;
     padding: 3rem 4rem;
     box-shadow: 0 0 15px gray;
     position: sticky;
@@ -294,7 +294,7 @@ form div textarea {
 form div input[type=submit] {
   padding: 1rem;
   border-radius: 2.5rem;
-  background-color: #f00;
+  background-color: #ff3232;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -329,10 +329,11 @@ form div input[type=submit] {
   background-image: url("./res/campo_cantacto.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  filter: blur(15px);
   color: #ffffff;
   width: 100%;
   height: 100%;
-  filter: blur(15px);
   z-index: -1;
 }
 
@@ -418,7 +419,7 @@ form div input[type=submit] {
 .buttonLoginAccept {
   padding: 0.5rem 1rem;
   border-radius: 15px;
-  background-color: #f00;
+  background-color: #ff3232;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -468,23 +469,38 @@ form.animating {
   border-radius: 15px;
   box-shadow: 0 0 10px #fd8484;
   background-color: #f5f5f5;
-  color: #333;
+  color: black;
 }
 
 @media (max-width: 1100px) {
-  .team {
-    width: 65%;
-    margin-left: 6%;
-  }
   .teamList {
-    grid-template-columns: repeat(1, 1fr);
-    margin-top: 15%!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .team {
+    width: 75%;
+    margin-top: 15% !important;
+  }
+}
+@media (max-width: 768px) {
+  .teamList {
+    margin: top 15% !important;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .team {
+    width: 45%;
     margin: 0;
   }
 }
 a {
   text-decoration: none;
-  color: #333;
+  color: black;
 }
 
 .footer {
