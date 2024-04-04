@@ -74,7 +74,10 @@ body {
   position: absolute;
   background-color: $secondary-color;
   @include box-shadow($box-shadow);
-  @include flex-center;
+  justify-content: center;
+  display:flex;
+  flex-direction: column;
+  align-items: center
 }
 
 .submenu a {
