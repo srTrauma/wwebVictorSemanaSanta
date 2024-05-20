@@ -509,17 +509,27 @@ form.animating {
   align-items: center;
   justify-content: center;
   margin: 1rem;
-  padding: 10rem 3rem;
+  padding: 5rem 2rem;
   border-radius: $border-radius;
   @include box-shadow(0 0 10px #fd8484);
   background-color: $secondary-color;
   color: $text-color;
   height: 30rem; // Add a fixed height to the containers
 }
+.team a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
 .team img{
   max-width: 50%;
   height: auto;
-  margin: 3rem;
+}
+.team:hover {
+  scale: 1.05;
+  cursor: pointer;
 }
 @media (max-width: 1100px) {
   .teamList {

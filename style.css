@@ -12,17 +12,7 @@ body {
   padding: 0;
   background-color: #f5f5f5;
   color: black;
-  -webkit-animation: bodyInitAnim 0.2s ease-in forwards;
-          animation: bodyInitAnim 0.2s ease-in forwards;
-}
-
-@-webkit-keyframes bodyInitAnim {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  animation: bodyInitAnim 0.2s ease-in forwards;
 }
 
 @keyframes bodyInitAnim {
@@ -100,17 +90,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  -webkit-animation: animacionAbrirNavabrAlbajarDesktop 0.2s ease-in forwards;
-          animation: animacionAbrirNavabrAlbajarDesktop 0.2s ease-in forwards;
-}
-
-@-webkit-keyframes animacionAbrirNavabrAlbajarDesktop {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0%);
-  }
+  animation: animacionAbrirNavabrAlbajarDesktop 0.2s ease-in forwards;
 }
 
 @keyframes animacionAbrirNavabrAlbajarDesktop {
@@ -147,13 +127,11 @@ body {
 
 .hidden {
   display: none;
-  -webkit-animation: closeAnimMobile 0.3s ease-in forwards;
-          animation: closeAnimMobile 0.3s ease-in forwards;
+  animation: closeAnimMobile 0.3s ease-in forwards;
 }
 
 .closing {
-  -webkit-animation: closeAnimMobile 0.3s ease-in forwards;
-          animation: closeAnimMobile 0.3s ease-in forwards;
+  animation: closeAnimMobile 0.3s ease-in forwards;
 }
 
 .active {
@@ -163,27 +141,15 @@ body {
   gap: 1rem;
   justify-content: center;
   margin: 1rem;
-  -webkit-animation: openAnimMobile 0.3s ease-in forwards;
-          animation: openAnimMobile 0.3s ease-in forwards;
+  animation: openAnimMobile 0.3s ease-in forwards;
 }
 
 .NavBarMobile.openAnimMobile.active {
-  -webkit-animation: openAnimMobile 0.3s ease-in forwards;
-          animation: openAnimMobile 0.3s ease-in forwards;
+  animation: openAnimMobile 0.3s ease-in forwards;
 }
 
 .NavBarMobile.closeAnimMobile.active {
-  -webkit-animation: closeAnimMobile 0.3s ease-in forwards;
-          animation: closeAnimMobile 0.3s ease-in forwards;
-}
-
-@-webkit-keyframes closeAnimMobile {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  animation: closeAnimMobile 0.3s ease-in forwards;
 }
 
 @keyframes closeAnimMobile {
@@ -192,14 +158,6 @@ body {
   }
   100% {
     transform: translateX(-100%);
-  }
-}
-@-webkit-keyframes openAnimMobile {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0%);
   }
 }
 @keyframes openAnimMobile {
@@ -277,7 +235,6 @@ body {
     color: black;
     padding: 3rem 4rem;
     box-shadow: 0 0 15px gray;
-    position: -webkit-sticky;
     position: sticky;
     top: auto;
     z-index: 999;
@@ -477,22 +434,7 @@ form div input[type=submit] {
 }
 
 form.animating {
-  -webkit-animation: coverForm 0.2s forwards;
-          animation: coverForm 0.2s forwards;
-}
-
-@-webkit-keyframes coverForm {
-  0% {
-    opacity: 1;
-    display: flex;
-    translate: translateY(-10%);
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-    display: none;
-    translate: translateY(0%);
-  }
+  animation: coverForm 0.2s forwards;
 }
 
 @keyframes coverForm {
@@ -524,7 +466,7 @@ form.animating {
   align-items: center;
   justify-content: center;
   margin: 1rem;
-  padding: 10rem 3rem;
+  padding: 5rem 2rem;
   border-radius: 15px;
   box-shadow: 0 0 10px #fd8484;
   background-color: #f5f5f5;
@@ -532,10 +474,22 @@ form.animating {
   height: 30rem;
 }
 
+.team a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
 .team img {
   max-width: 50%;
   height: auto;
-  margin: 3rem;
+}
+
+.team:hover {
+  scale: 1.05;
+  cursor: pointer;
 }
 
 @media (max-width: 1100px) {
@@ -628,5 +582,4 @@ a {
   .footer {
     margin-top: 100%;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
